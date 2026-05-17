@@ -4,7 +4,7 @@ import Navlink from "./shared/Navlink";
 
 const Navbar = () => {
   return (
-    <div className=" m-2 border p-2 rounded-sm border-[rgba(36,47,98,0.95)] sticky top-0 z-50 bg-[rgba(25,32,65,0.8)]">
+    <div className=" m-2 border rounded-sm border-[rgba(36,47,98,0.95)] sticky top-0 z-50 bg-[rgba(25,32,65,0.8)]">
           <div className="navbar shadow-2xl">
   <div className="navbar-start">
     <div className="dropdown">
