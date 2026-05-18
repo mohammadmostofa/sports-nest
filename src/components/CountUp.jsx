@@ -108,22 +108,6 @@ const CountUpPage = () => {
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-violet-500/10 blur-3xl rounded-full"></div>
 
       <div className="max-w-7xl mx-auto">
-        
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Our <span className="text-[#0f90f4]">Achievements</span>
-          </h2>
-
-          <p className="text-white mt-4 max-w-2xl mx-auto">
-            Trusted by thousands of athletes and sports enthusiasts worldwide.
-            We deliver seamless sports experiences with premium facilities and
-            modern booking solutions.
-          </p>
-        </div>
-
-        {/* Stats */}
-
 <Marquee
   pauseOnHover={true}
   speed={50}
