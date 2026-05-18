@@ -17,7 +17,7 @@ export default function NotFoundPage() {
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">  
         <Link
-          href="/support" 
+          href="/" 
           className="inline-flex items-center justify-center rounded-lg border border-slate-600 bg-slate-900/50 px-5 py-2.5 text-sm font-semibold text-slate-300 hover:bg-slate-900 hover:text-white transition-all w-full sm:w-auto"
         >
           Go Back Home

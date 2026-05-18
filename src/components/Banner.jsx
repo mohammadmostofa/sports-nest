@@ -1,4 +1,5 @@
 import { Button } from "@heroui/react";
+import CountUpPage from "./CountUp";
 
 const BannerPage = () => {
   return (
@@ -18,9 +19,12 @@ const BannerPage = () => {
                 <div className="absolute inset-0 bg-[rgba(18,19,35,0.34)] flex justify-center items-center">
                   
                       <div className="flex flex-col justify-center items-center">
-                          <h1 className="font-extrabold text-4xl px-2 text-center  md:text-6xl
-                           bg-gradient-to-r from-[rgb(1,197,251)] via-[rgb(255,0,132)] to-[rgba(194,212,237,0.93)] bg-clip-text text-transparent
-                          ">Explore Your Favourite Sports</h1>
+                      <h1 className="text-4xl font-extrabold tracking-tighter text-center md:text-5xl lg:text-7xl text-slate-100">
+                      Discover & Explore Your <br className="hidden md:inline" />
+                      <span className="bg-gradient-to-r from-[#01c5fb] via-[#ff0084] to-[#93c5fd] bg-clip-text text-transparent relative dynamic-glow">
+                        Favourite Sports
+                      </span>
+                     </h1>
                           <p className="text-xl font-medium text-white max-w-2xl mx-auto text-center leading-relaxed pt-10">
                             Discover and book the perfect sports venue effortlessly. Find your ground, reserve instantly, and focus on your game.
                           </p>
@@ -42,7 +46,13 @@ const BannerPage = () => {
                 
 
       </div>
+        
 
+        <div>
+
+           <CountUpPage></CountUpPage>
+ 
+        </div>
       
     </div>
   );

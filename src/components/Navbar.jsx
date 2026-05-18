@@ -48,15 +48,15 @@ const Navbar = () => {
   
     <Button className="rounded-sm bg-gradient-to-r 
     from-[rgba(236,0,0,0.9)] to-[#5b0014]
-     text-white font-semibold border-0 hover:opacity-80
-     transition">
+     text-white font-semibold border-0 hover:opacity-80 text-md
+     transition px-4 ">
   Logout
 </Button>
 
     <Button className="rounded-sm bg-gradient-to-r 
     from-[#0014f5] to-[#000a7c]
-     text-white font-semibold border-0 hover:opacity-80
-     transition">
+     text-white font-semibold border-0 hover:opacity-80  text-md
+     transition px-5">
   Login
 </Button>
   </div>
