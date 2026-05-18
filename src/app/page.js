@@ -1,5 +1,9 @@
 import BannerPage from "@/components/Banner";
-import Image from "next/image";
+
+const ttt =[
+ 
+
+]
 
 export default function Home() {
   return (
@@ -10,3 +14,5 @@ export default function Home() {
     
   );
 }
+
+

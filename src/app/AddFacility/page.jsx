@@ -33,10 +33,6 @@ const AddFacilityPage = () => {
           //     toast.error("Try Again !");
           //  }
 
-          console.log(data)
-
-
-
 
 }
 
@@ -126,25 +122,25 @@ const AddFacilityPage = () => {
               </fieldset>
 
               {/* Price Per Hour */}
-<fieldset className="fieldset col-span-1">
-  <label className="label">
-    <span className="label-text font-semibold text-gray-300">Price Per Hour</span>
-  </label>
-  <div className="relative w-full flex items-center">
-    <span className="absolute left-4 z-10 text-lg font-bold text-white pointer-events-none select-none">
-      $
-    </span>
-    <input
-      type="number"
-      name="pricePerHour"
-      min="0"
-      step="0.01"
-      className="input input-bordered w-full pl-10 pr-4 text-white focus:input-primary transition-all duration-200"
-      placeholder="0.00"
-      required
-    />
-  </div>
-</fieldset>
+              <fieldset className="fieldset col-span-1">
+                <label className="label">
+                  <span className="label-text font-semibold text-gray-300">Price Per Hour</span>
+                </label>
+                <div className="relative w-full flex items-center">
+                  <span className="absolute left-4 z-10 text-lg font-bold text-white pointer-events-none select-none">
+                    $
+                  </span>
+                  <input
+                    type="number"
+                    name="pricePerHour"
+                    min="0"
+                    step="0.01"
+                    className="input input-bordered w-full pl-10 pr-4 text-white focus:input-primary transition-all duration-200"
+                    placeholder="0.00"
+                    required
+                  />
+                </div>
+              </fieldset>
 
               {/* Capacity */}
               <fieldset className="fieldset col-span-1">
@@ -168,7 +164,7 @@ const AddFacilityPage = () => {
                   <span className="label-text font-semibold text-gray-300">Available Time Slots</span>
                 </label>
                 <input 
-                  type="datetime-local" 
+                  type="date" 
                   name="timeSlots"
                   className="input input-bordered w-full text-white focus:input-primary transition-all duration-200" 
                   required
