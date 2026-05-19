@@ -6,7 +6,7 @@ const FooterPage = () => {
   return (
     <div>
           
-          <footer className=" pt-10 bg-slate-950 text-white border-t border-white/10 flex flex-col justify-center items-center">
+          <footer className=" pt-10 bg-slate-950 text-white border-t border-white/10 flex flex-col justify-center font-[--var-bebas] items-center">
 
   <div className=" px-5 py-14 grid grid-cols-1 md:grid-cols-2 md:pl-25 lg:grid-cols-4 J gap-10">
 
