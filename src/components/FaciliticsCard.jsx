@@ -4,8 +4,8 @@ const FaciliticsCard = ({ facilities }) => {
   const { facilityName, facilityType, location, pricePerHour, email, image, description, availableTimeSlots,} = facilities;
 
   return (
-    <div className="group relative w-[310px] h-[420px] mx-auto rounded-[25px] overflow-hidden bg-[#0d0722] 
-    border border-white/10 shadow-xl transition-all duration-500 hover:shadow-purple-500/10 hover:border-purple-500/30">
+    <div className="group relative w-[310px] h-[420px] mx-auto rounded-[25px] overflow-hidden bg-[#ffc9fb1e] 
+    border border-white/10 shadow-xl transition-all duration-500 hover:shadow-purple-500/40 hover:border-purple-500">
       
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -22,8 +22,8 @@ const FaciliticsCard = ({ facilities }) => {
 
 
       <div className="absolute top-4 left-4 z-10">
-        <span className="text-[11px] font-bold tracking-wider uppercase bg-white/10 
-        backdrop-blur-md text-purple-300 border border-white/10 px-3 py-1 rounded-full">
+        <span className="text-[11px] font-bold tracking-wider uppercase  bg-purple-800/50 border border-purple-500/60
+           text-purple-100 px-3 py-1 rounded-full">
           {facilityType}
         </span>
       </div>
@@ -38,7 +38,7 @@ const FaciliticsCard = ({ facilities }) => {
           </span>
         </div>
 
-        <h1 className="text-2xl font-extrabold tracking-tight mb-2 line-clamp-1 group-hover:text-purple-400 transition-colors duration-300">
+        <h1 className="text-2xl tracking-wider font-extrabold mb-4 line-clamp-1 group-hover:text-purple-400 transition-colors duration-300">
           {facilityName}
         </h1>
 
@@ -53,7 +53,7 @@ const FaciliticsCard = ({ facilities }) => {
         <div className="pt-4 border-t border-white/10 flex items-center justify-between transform translate-y-6 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
           
           <div className="flex flex-col">
-            <span className="text-[10px] uppercase tracking-widest text-gray-400">Price/Hour</span>
+            <span className="text-[10px] uppercase tracking-widest text-gray-100">Price/Hour</span>
             <span className="text-xl font-black text-white">
               ${pricePerHour}
             </span>

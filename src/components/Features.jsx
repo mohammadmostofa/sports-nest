@@ -5,7 +5,7 @@ const FeaturesPage =async () => {
       const res = await fetch(`http://localhost:5000/features`)
       const facilities = await res.json()
   return (
-    <div>        
+    <div className='py-10'>        
         {/* Heading */}
         <div className="text-center mt-7 mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white my-6">
@@ -14,7 +14,7 @@ const FeaturesPage =async () => {
 
           <p className="text-white mt-4 max-w-4xl mx-auto my-5">
             Train smarter, play harder, and enjoy world-class sports facilities designed for every athlete.
-From modern training zones to seamless booking and premium support, every feature is built to elevate your game.
+            From modern training zones to seamless booking and premium support, every feature is built to elevate your game.
           </p>
         </div>
 

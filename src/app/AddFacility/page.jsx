@@ -1,5 +1,7 @@
 "use client"
 
+import toast from "react-hot-toast";
+
 // import toast from "react-hot-toast";
 
 const AddFacilityPage = () => {
@@ -7,7 +9,6 @@ const AddFacilityPage = () => {
       e.preventDefault();
       const formData = new FormData(e.currentTarget);
       const AddFacilityInfo = Object.fromEntries(formData.entries());
-      console.log(AddFacilityInfo)
 
       // post api to sent data in mongodb
       const res = await fetch(`http://localhost:5000/facility`,{
@@ -27,11 +28,11 @@ const AddFacilityPage = () => {
 
           // condition 
 
-          //    if (data.insertedId) {
-          //     toast.success("Destination Added Successfully");
-          //  } else {
-          //     toast.error("Try Again !");
-          //  }
+             if (data.insertedId) {
+              toast.success("Destination Added Successfully");
+           } else {
+              toast.error("Try Again !");
+           }
 
 
 }
@@ -39,9 +40,9 @@ const AddFacilityPage = () => {
 
 
   return (
-    <div className="hero bg-base-200 min-h-screen py-12 px-4">
+    <div className="hero  min-h-screen py-12 px-4">
       <div className="hero-content w-full p-0">
-        <div className="card bg-base-100 w-full max-w-3xl shadow-2xl border border-gray-800">
+        <div className="card bg-[#77777738] w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-800">
           <div className="card-body p-6 sm:p-10">
             
             {/* Header */}
@@ -65,8 +66,9 @@ const AddFacilityPage = () => {
                 <input
                   type="text"
                   name="name"
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
-                  placeholder="e.g. Premium Football Turf"
+                  className="input input-bordered w-full text-white
+                   focus:input-primary transition-all  duration-200"
+                  placeholder="e.g. Premium Football"
                   required
                 />
               </fieldset>
@@ -79,7 +81,8 @@ const AddFacilityPage = () => {
                 <input
                   type="text"
                   name="facilityType"
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white
+                   focus:input-primary transition-all duration-200"
                   placeholder="Select or Type Type"
                   list="facilityTypes"
                   required
@@ -101,7 +104,8 @@ const AddFacilityPage = () => {
                 <input
                   type="url"
                   name="image"
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white
+                   focus:input-primary transition-all duration-200"
                   placeholder="https://example.com/image.jpg"
                   required
                 />
@@ -115,7 +119,8 @@ const AddFacilityPage = () => {
                 <input
                   type="text"
                   name="location"
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white 
+                  focus:input-primary transition-all duration-200"
                   placeholder="Enter Area / City"
                   required
                 />
@@ -127,7 +132,8 @@ const AddFacilityPage = () => {
                   <span className="label-text font-semibold text-gray-300">Price Per Hour</span>
                 </label>
                 <div className="relative w-full flex items-center">
-                  <span className="absolute left-4 z-10 text-lg font-bold text-white pointer-events-none select-none">
+                  <span className="absolute left-4 z-10 text-lg 
+                  font-bold text-white pointer-events-none select-none">
                     $
                   </span>
                   <input
@@ -135,7 +141,8 @@ const AddFacilityPage = () => {
                     name="pricePerHour"
                     min="0"
                     step="0.01"
-                    className="input input-bordered w-full pl-10 pr-4 text-white focus:input-primary transition-all duration-200"
+                    className="input input-bordered w-full pl-10 pr-4
+                     text-white focus:input-primary transition-all duration-200"
                     placeholder="0.00"
                     required
                   />
@@ -152,7 +159,8 @@ const AddFacilityPage = () => {
                   name="capacity"
                   min="1"
                   max="15"
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white
+                   focus:input-primary transition-all duration-200"
                   placeholder="Maximun player"
                   required
                 />
@@ -181,7 +189,8 @@ const AddFacilityPage = () => {
                   name="email"
                   // value={email}
                   // onChange={(e) => setEmail(e.target.value)}
-                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white
+                   focus:input-primary transition-all duration-200"
                   placeholder="user@example.com"
                   required
                 />
@@ -194,7 +203,8 @@ const AddFacilityPage = () => {
            <textarea
              name="description"
              placeholder="Write details about the facility here..."
-             className="textarea textarea-bordered h-28 w-full text-white focus:textarea-primary transition-all duration-200"
+             className="textarea textarea-bordered h-28 w-full text-white
+              focus:textarea-primary transition-all duration-200"
              required
            ></textarea>
          </fieldset>
@@ -204,7 +214,8 @@ const AddFacilityPage = () => {
               <div className="col-span-1 md:col-span-2 mt-4">
                 <button 
                  type="submit" 
-                 className="btn btn-primary w-full text-white font-bold hover:shadow-lg transition-all duration-200">
+                 className="btn btn-primary w-full text-white font-
+                  hover:shadow-lg transition-all duration-200">
                  Add New Facility
                </button>
               </div>
