@@ -1,3 +1,4 @@
+import { DeleteFacilitics } from "@/components/DeleteFaclilitics";
 import EditFacilitics from "@/components/EditFacilitics";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import { CiLocationOn } from "react-icons/ci";
   const DetailsPage = async ({params}) => {
   const {id} = await params
   const res = await fetch(`http://localhost:5000/facility/${id}`)
-  const DetailsFacility = await res.json()
+  const DetailsFacility = await res.json() 
       const {facilityName,
              facilityType,
              location,
@@ -22,10 +23,10 @@ import { CiLocationOn } from "react-icons/ci";
     
     <div className="py-6 px-4 max-w-7xl mx-auto">
   {/* Back Button */}
-       <div>
+       <div className="flex justify-between items-center">
              <div>
                   <Link href={'/AllFacilities'}>
-                 <p className="text-xs border-b-2 pt-2 hover:text-indigo-600 border-b-violet-500 w-fit font-light mb-6">
+                 <p className="text-xs border-b-2 pt-2 hover:text-indigo-600 border-b-violet-500 w-fit mb-6">
                    Back To All Facilities
                  </p>
                </Link>
@@ -33,22 +34,21 @@ import { CiLocationOn } from "react-icons/ci";
 
 
              {/* delete and edit btn */}
-
-                <div>
+                <div className="flex justify-start space-x-4 items-center">
                        <EditFacilitics DetailsFacility={DetailsFacility} />
+                       <DeleteFacilitics DetailsFacility={DetailsFacility} />
+
                 </div> 
 
-                <div>
-
-                </div>
+    
 
        </div>
 
   
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center items-start">
+  <div className="grid grid-cols-1 mt-5  lg:grid-cols-3 gap-8 justify-center items-start">
     
 
-    <div className="lg:col-span-2 space-y-6">
+    <div className="lg:col-span-2  space-y-6">
       <div>
         <h2 className="font-bold text-2xl md:text-3xl py-2 shadow-sm w-fit">
           {facilityName}
@@ -60,13 +60,7 @@ import { CiLocationOn } from "react-icons/ci";
         </p>
 
         <div className="my-4 overflow-hidden rounded-2xl">
-          <Image
-            src={image}
-            width={1000}
-            height={600}
-            alt={facilityName}
-            className="w-full h-[250px] md:h-[400px] object-cover"
-          />
+          <Image src={image} width={1000} height={600} alt={facilityName|| 'image' } className="my-4 overflow-hidden rounded-2xl"/>
         </div>
 
         <div className="space-y-3 mt-4">
@@ -124,7 +118,7 @@ import { CiLocationOn } from "react-icons/ci";
     </div>
 
     {/* RIGHT  */}
-    <div className="w-full max-w-md mx-auto lg:w-full bg-white/5 border
+    <div className="w-full max-w-md mx-auto lg:w-full bg-white/5 border md:mt-25
      border-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-xl space-y-5 lg:sticky lg:top-6">
       
       {/* Price */}
@@ -160,7 +154,10 @@ import { CiLocationOn } from "react-icons/ci";
       </div>
 
       {/* Button */}
-      <Button variant="primary" className="w-full py-3 rounded-2xl text-white hover:text-white-900/10  ">
+     <Button className="w-full py-3
+       rounded-2xl text-white hover:text-white-900/10 
+        bg-blue-600/40  hover:bg-blue-600/10 transition-shadow duration-100
+          ">
         Book Now
       </Button>
 

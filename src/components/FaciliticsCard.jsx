@@ -8,11 +8,7 @@ const FaciliticsCard = ({ facilities }) => {
     <div className="group relative w-[310px] h-[420px] mx-auto rounded-[25px] overflow-hidden bg-[#ffc9fb1e] 
     border border-white/10 shadow-xl transition-all duration-500 hover:shadow-purple-500/40 hover:border-purple-500">
       
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-src={image}
-fill
-alt='facilities'
+      <div className="absolute inset-0 w-full h-full"><Image src={image} fill alt={facilityName || 'image'}
 className="object-cover transition-all duration-700 ease-out group-hover:scale-110"
 sizes="(max-width: 350px) 100vw, 350px"
         />

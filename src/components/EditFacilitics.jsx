@@ -5,7 +5,7 @@ import { BiEdit, BiEnvelope } from 'react-icons/bi';
 import toast, { Toaster } from "react-hot-toast";
 
 const EditFacilitics = ({DetailsFacility}) => {
-    const  { _id,facilityName,facilityType, Capacity,location,pricePerHour,email,image, description, availableTimeSlots,} = DetailsFacility;    
+  const { _id,facilityName,facilityType, Capacity,location,pricePerHour,email,image, description, availableTimeSlots,} = DetailsFacility;    
 
 // onsubmit
 const onSubmit = async (e) => {
@@ -36,7 +36,7 @@ const onSubmit = async (e) => {
   return (
     <div>
   <Modal>
-    <Button className='btn bg-blue-800 hover:bg-blue-700/10'>
+    <Button className='btn bg-blue-700/20 hover:bg-blue-700/30'>
       <BiEdit/> Edit
     </Button>
 
