@@ -2,7 +2,6 @@ import FaciliticsCard from '@/components/FaciliticsCard';
 const AllFacilitiesPage = async() => {
       const res = await fetch(`http://localhost:5000/facility`)
       const facilities = await res.json();
-    console.log(facilities,"facilities")
 
   return (
     <div className='flex flex-col justify-center items-center py-10' >

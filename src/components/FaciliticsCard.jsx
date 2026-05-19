@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FaciliticsCard = ({ facilities }) => {
   const { facilityName, facilityType, location, pricePerHour, email, image, description, availableTimeSlots,} = facilities;
@@ -58,12 +59,12 @@ const FaciliticsCard = ({ facilities }) => {
               ${pricePerHour}
             </span>
           </div>
-          
-          {/* Action Button */}
-          <button className="bg-purple-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-purple-500 active:scale-95 transition-all duration-300 shadow-lg shadow-purple-600/20">
+           
+           <Link href={`/AllFacilities/${facilities._id}`} >
+           <button className="bg-purple-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-purple-500 active:scale-95 transition-all duration-300 shadow-lg shadow-purple-600/20">
             View Details
           </button>
-          
+           </Link>          
         </div>
 
       </div>

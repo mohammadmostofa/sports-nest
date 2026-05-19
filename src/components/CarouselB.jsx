@@ -93,16 +93,11 @@ const CarouselB = () => {
 
               <div className="flex flex-wrap gap-4 mt-8">
 
-                <button className="px-7 py-3 rounded-full  bg-gradient-to-r 
-                     from-[#7a0121] to-[#000a73]
-                      text-white font-semibold border-0 hover:opacity-80  text-md
-                      transition ">
+                <button className="px-7 py-3 rounded-full  bg-gradient-to-r  from-[#7a0121] to-[#000a73]  text-white font-semibold border-0 hover:opacity-80  text-md  transition ">
                   Book A Court
                 </button>
 
-                <button className="px-7 py-3 rounded-full border border-white
-                 text-white font-semibold hover:bg-white hover:text-black
-                  transition-all duration-300">
+                <button className="px-7 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black  transition-all duration-300">
                   Join Us Now
                 </button>
 
