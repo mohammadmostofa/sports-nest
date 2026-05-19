@@ -1,5 +1,5 @@
+import EditFacilitics from "@/components/EditFacilitics";
 import { Button } from "@heroui/react";
-import { div } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
@@ -9,7 +9,6 @@ import { CiLocationOn } from "react-icons/ci";
   const {id} = await params
   const res = await fetch(`http://localhost:5000/facility/${id}`)
   const DetailsFacility = await res.json()
-
       const {facilityName,
              facilityType,
              location,
@@ -17,21 +16,33 @@ import { CiLocationOn } from "react-icons/ci";
              email,
              image, 
              description, 
-             availableTimeSlots,} = DetailsFacility;
-
-
-             
-
+             availableTimeSlots,} = DetailsFacility;    
 
   return (
     
     <div className="py-6 px-4 max-w-7xl mx-auto">
   {/* Back Button */}
-  <Link href={'/AllFacilities'}>
-    <p className="text-xs border-b-2 pt-2 hover:text-indigo-600 border-b-red-500 w-fit font-light mb-6">
-      Back To All Facilities
-    </p>
-  </Link>
+       <div>
+             <div>
+                  <Link href={'/AllFacilities'}>
+                 <p className="text-xs border-b-2 pt-2 hover:text-indigo-600 border-b-violet-500 w-fit font-light mb-6">
+                   Back To All Facilities
+                 </p>
+               </Link>
+             </div>
+
+
+             {/* delete and edit btn */}
+
+                <div>
+                       <EditFacilitics DetailsFacility={DetailsFacility} />
+                </div> 
+
+                <div>
+
+                </div>
+
+       </div>
 
   
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center items-start">
@@ -128,7 +139,7 @@ import { CiLocationOn } from "react-icons/ci";
       <div className="flex flex-col bg-black/20 rounded-2xl p-4 space-y-2">
         <p className="text-gray-400 text-sm">Booking Date</p>
         <input 
-          type="date" 
+          type="datetime-local" 
           name="date" 
           className="input w-full bg-transparent text-white border border-white/20 rounded-
            p-2 outline-none focus:border-indigo-500 text-sm" 

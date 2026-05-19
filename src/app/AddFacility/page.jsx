@@ -1,48 +1,34 @@
 "use client"
-
-import toast from "react-hot-toast";
-
-// import toast from "react-hot-toast";
-
+import toast, { Toaster } from "react-hot-toast";
 const AddFacilityPage = () => {
-  const onSubmit = async (e) =>{
-      e.preventDefault();
-      const formData = new FormData(e.currentTarget);
-      const AddFacilityInfo = Object.fromEntries(formData.entries());
+const onSubmit = async (e) => {
+  e.preventDefault();
 
-      // post api to sent data in mongodb
-      const res = await fetch(`http://localhost:5000/facility`,{
-           method:"POST",
-           headers:{
-                'content-type':'application/json'
-           },    
-            //  sent data in body by process json data type
-            body:JSON.stringify(AddFacilityInfo),
-            
+  const formData = new FormData(e.currentTarget);
+  const AddFacilityInfo = Object.fromEntries(formData.entries());
+    const res = await fetch("http://localhost:5000/facility", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(AddFacilityInfo),
+    });
+
+    const data = await res.json();
+
+        if (!res.ok) {
+          toast.error("Try Again!");
+    } else {
+          toast.success("Facility Added  Successfully");
+    }
   
-          })    
-        
-
-          // comment receive 
-          const data = await res.json();
-
-          // condition 
-
-             if (data.insertedId) {
-              toast.success("Destination Added Successfully");
-           } else {
-              toast.error("Try Again !");
-           }
-
-
-}
-
+};
 
 
   return (
-    <div className="hero  min-h-screen py-12 px-4">
+    <div className="hero bg-base-200 min-h-screen py-12 px-4">
       <div className="hero-content w-full p-0">
-        <div className="card bg-[#77777738] w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-800">
+        <div className="card bg-base-100 w-full max-w-3xl shadow-2xl border border-gray-800">
           <div className="card-body p-6 sm:p-10">
             
             {/* Header */}
@@ -66,35 +52,32 @@ const AddFacilityPage = () => {
                 <input
                   type="text"
                   name="name"
-                  className="input input-bordered w-full text-white
-                   focus:input-primary transition-all  duration-200"
-                  placeholder="e.g. Premium Football"
+                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                  placeholder="e.g. Premium Football Turf"
                   required
                 />
               </fieldset>
 
               {/* Facility Type */}
-              <fieldset className="fieldset col-span-1">
-                <label className="label">
-                  <span className="label-text font-semibold text-gray-300">Facility Type</span>
-                </label>
-                <input
-                  type="text"
-                  name="facilityType"
-                  className="input input-bordered w-full text-white
-                   focus:input-primary transition-all duration-200"
-                  placeholder="Select or Type Type"
-                  list="facilityTypes"
-                  required
-                />
-                <datalist id="facilityTypes">
-                  <option value="Field Sports" />
-                  <option value="Court Sports" />
-                  <option value="Water Sports" />
-                  <option value="Indoor Fitness" />
-                  <option value="Track & Athletics" />
-                </datalist>
-              </fieldset>
+           <fieldset className="fieldset col-span-1">
+  <label className="label">
+    <span className="label-text font-semibold text-gray-300">
+      Facility Type
+    </span>
+  </label>
+
+  <select name="facilityType"  className="select w-full text-center  pt-2 focus:select-primary transition-all duration-200"
+      required
+     defaultValue=""
+  >
+    <option value="" disabled className="text-center"> Select Facility Type</option>
+    <option value="Field Sports" className="text-center">Field Sports</option>
+    <option value="Court Sports" className="text-center">Court Sports</option>
+    <option value="Water Sports" className="text-center">Water Sports</option>
+    <option value="Indoor Fitness" className="text-center">Indoor Fitness</option>
+    <option value="Track & Athletics" className="text-center">Track & Athletics</option>
+  </select>
+</fieldset>
 
               {/* Image URL */}
               <fieldset className="fieldset col-span-1">
@@ -104,8 +87,7 @@ const AddFacilityPage = () => {
                 <input
                   type="url"
                   name="image"
-                  className="input input-bordered w-full text-white
-                   focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
                   placeholder="https://example.com/image.jpg"
                   required
                 />
@@ -119,8 +101,7 @@ const AddFacilityPage = () => {
                 <input
                   type="text"
                   name="location"
-                  className="input input-bordered w-full text-white 
-                  focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
                   placeholder="Enter Area / City"
                   required
                 />
@@ -132,8 +113,7 @@ const AddFacilityPage = () => {
                   <span className="label-text font-semibold text-gray-300">Price Per Hour</span>
                 </label>
                 <div className="relative w-full flex items-center">
-                  <span className="absolute left-4 z-10 text-lg 
-                  font-bold text-white pointer-events-none select-none">
+                  <span className="absolute left-4 z-10 text-lg font-bold text-white pointer-events-none select-none">
                     $
                   </span>
                   <input
@@ -141,8 +121,7 @@ const AddFacilityPage = () => {
                     name="pricePerHour"
                     min="0"
                     step="0.01"
-                    className="input input-bordered w-full pl-10 pr-4
-                     text-white focus:input-primary transition-all duration-200"
+                    className="input input-bordered w-full pl-10 pr-4 text-white focus:input-primary transition-all duration-200"
                     placeholder="0.00"
                     required
                   />
@@ -159,8 +138,7 @@ const AddFacilityPage = () => {
                   name="capacity"
                   min="1"
                   max="15"
-                  className="input input-bordered w-full text-white
-                   focus:input-primary transition-all duration-200"
+                  className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
                   placeholder="Maximun player"
                   required
                 />
@@ -181,20 +159,21 @@ const AddFacilityPage = () => {
                 
               {/* Email (Auto Input) */}
               <fieldset className="fieldset col-span-1">
-                <label className="label">
-                  <span className="label-text font-semibold text-gray-300">Owner Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  // value={email}
-                  // onChange={(e) => setEmail(e.target.value)}
-                  className="input input-bordered w-full text-white
-                   focus:input-primary transition-all duration-200"
-                  placeholder="user@example.com"
-                  required
-                />
-              </fieldset>
+              <label className="label">
+                <span className="label-text font-semibold text-gray-300">Owner Email</span>
+              </label>
+            
+              <input
+                type="email"
+                name="email"
+                className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
+                placeholder="user@example.com"
+                required
+                minLength={6}
+                pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                title="At least 6 characters, one uppercase letter, one lowercase letter"
+              />
+            </fieldset>
 
            <fieldset className="fieldset col-span-1 md:col-span-2 w-full">
            <label className="label">
@@ -203,8 +182,7 @@ const AddFacilityPage = () => {
            <textarea
              name="description"
              placeholder="Write details about the facility here..."
-             className="textarea textarea-bordered h-28 w-full text-white
-              focus:textarea-primary transition-all duration-200"
+             className="textarea textarea-bordered h-28 w-full text-white focus:textarea-primary transition-all duration-200"
              required
            ></textarea>
          </fieldset>
@@ -214,8 +192,7 @@ const AddFacilityPage = () => {
               <div className="col-span-1 md:col-span-2 mt-4">
                 <button 
                  type="submit" 
-                 className="btn btn-primary w-full text-white font-
-                  hover:shadow-lg transition-all duration-200">
+                 className="btn btn-primary w-full text-white font-bold hover:shadow-lg transition-all duration-200">
                  Add New Facility
                </button>
               </div>

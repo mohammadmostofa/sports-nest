@@ -10,11 +10,11 @@ const FaciliticsCard = ({ facilities }) => {
       
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src={image}
-          fill
-          alt={facilityName}
-          className="object-cover transition-all duration-700 ease-out group-hover:scale-110"
-          sizes="(max-width: 350px) 100vw, 350px"
+src={image}
+fill
+alt='facilities'
+className="object-cover transition-all duration-700 ease-out group-hover:scale-110"
+sizes="(max-width: 350px) 100vw, 350px"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#070114] via-[#070114]/80

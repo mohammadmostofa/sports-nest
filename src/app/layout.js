@@ -1,15 +1,20 @@
-import { Bebas_Neue } from "next/font/google";
+import { Geist, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import FooterPage from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
-const bebasNeue = Bebas_Neue({
-  variable: '--font-bebas',
-    weight: '400',
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,16 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${bebasNeue.className}  h-full antialiased`}
+      className={`${geistSans.variable} ${bebasNeue.variable} h-full antialiased`}
     >
-       
-      <body className="min-h-full flex flex-col bg-[#202342] tracking-[1]">
-       <Navbar></Navbar>
-
+      <body className="min-h-full flex flex-col bg-[#202342]">
+        <Navbar />
+        <Toaster />
         {children}
-        
-        <FooterPage></FooterPage>
-       </body>
+        <FooterPage />
+      </body>
     </html>
   );
 }
