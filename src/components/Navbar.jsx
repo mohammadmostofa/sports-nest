@@ -52,7 +52,7 @@ const Navbar = () => {
     from-[rgba(236,0,0,0.9)] to-[#5b0014]
      text-white font-semibold border-0 hover:opacity-80 text-md tracking-wide
      transition px-4 ">
-  Logout
+  Register now
 </Button>
     </Link>
 

@@ -32,18 +32,18 @@ console.log(data,'data')
    if(error){
       toast.error(error.message || "Try Again");
    } else{
-     toast.success("SignUp Successfully");
+     toast.success("Signed up successfully");
+     redirect("/Login");
   }
         
 
-      redirect("/Login");
 
 }
 
   return (
    <div className="min-h-screen flex items-center justify-center bg-gray-100/5 px-4 py-2">
    {/*card  */}
-  <Card className="w-full max-w-sm px-10 y-5 bg-violet-800/10 rounded-2xl shadow-xl
+  <Card className="w-full max-w-sm px-10 py-5 bg-violet-800/10 rounded-2xl shadow-xl
    border border-violet-900/40  ">
 
     <div className="text-center mb-3">
@@ -127,7 +127,7 @@ console.log(data,'data')
         type="submit"
         className="w-full py-2 mt-2 rounded-lg bg-blue-700 text-white font-medium"
       >
-        Submit →
+        Sign up →
       </Button>
 
     </Form>
