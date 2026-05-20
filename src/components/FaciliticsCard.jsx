@@ -13,8 +13,7 @@ className="object-cover transition-all duration-700 ease-out group-hover:scale-1
 sizes="(max-width: 350px) 100vw, 350px"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070114] via-[#070114]/80
-         to-[#070114]/20 transition-opacity duration-500 group-hover:opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070114] via-[#070114]/80 to-[#070114]/20 transition-opacity duration-500 group-hover:opacity-95" />
       </div>
 
 

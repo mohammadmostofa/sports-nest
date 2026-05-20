@@ -1,6 +1,7 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Navlink from "./shared/Navlink";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -46,19 +47,24 @@ const Navbar = () => {
   </div>
   <div className="navbar-end space-x-4">
   
-    <Button className="rounded-sm bg-gradient-to-r 
+    <Link href={'/SignUp'} >
+            <Button className="rounded-sm bg-gradient-to-r 
     from-[rgba(236,0,0,0.9)] to-[#5b0014]
      text-white font-semibold border-0 hover:opacity-80 text-md tracking-wide
      transition px-4 ">
   Logout
 </Button>
+    </Link>
 
-    <Button className="rounded-sm bg-gradient-to-r 
+  <Link href={'/Login'}>
+           <Button className="rounded-sm bg-gradient-to-r 
     from-[#0014f5] to-[#000a7c]
      text-white font-semibold border-0 hover:opacity-80  text-md tracking-widest
      transition px-5">
   Login
 </Button>
+  </Link>
+   
   </div>
 </div>
     </div>

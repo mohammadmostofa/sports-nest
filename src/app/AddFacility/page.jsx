@@ -77,7 +77,7 @@ const onSubmit = async (e) => {
     <option value="Indoor Fitness" className="text-center">Indoor Fitness</option>
     <option value="Track & Athletics" className="text-center">Track & Athletics</option>
   </select>
-</fieldset>
+           </fieldset>
 
               {/* Image URL */}
               <fieldset className="fieldset col-span-1">
