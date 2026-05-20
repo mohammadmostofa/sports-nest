@@ -32,10 +32,26 @@ console.log(data,'data')
      toast.success("Logged in successfully");
      redirect("/");
   }
-        
+      
+ 
+
+     }   
+
+     const handleGoogleSignIn = async () => {
+  const { data, error } = await authClient.signIn.social({
+    provider: "google",
+  }); 
+
+   if(error){
+      toast.error(error.message || "Try Again");
+   } else{
+    toast.success("Logged in with Google successfully");
+     redirect("/Login");
+  }
 
 
 }
+
 
   return (
    <div className="min-h-screen flex items-center justify-center bg-gray-100/5 px-4 py-2">
@@ -111,7 +127,7 @@ console.log(data,'data')
     </div>
 
     {/* GOOGLE BUTTON */}
-    <Button
+    <Button onClick={handleGoogleSignIn}
       type="button"
       className="w-full rounded-lg bg-white hover:bg-white/80 text-black flex items-center justify-center gap-2"
     >
