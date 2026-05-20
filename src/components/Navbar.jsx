@@ -1,9 +1,15 @@
+"use client"
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Navlink from "./shared/Navlink";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import { ControlledOpenState } from "./shared/DropDw";
 
 const Navbar = () => {
+  const {data:session} = authClient.useSession() ;
+    const user = session?.user;
+
   return (
     <div className=" m-2 border rounded-sm border-[rgba(36,47,98,0.95)] sticky top-0 z-50 bg-[rgba(25,32,65,0.8)] font-[--var-bebas]">
           <div className="navbar shadow-2xl">
@@ -32,8 +38,7 @@ const Navbar = () => {
                      }}
           />
            
-           <h2 className="text-2xl font-extrabold
-            bg-gradient-to-r from-[rgb(11,251,255)] via-[rgb(178,40,253)] to-[rgba(237,0,217,0.93)] bg-clip-text text-transparent">
+           <h2 className="text-2xl font-extrabold bg-gradient-to-r from-[rgb(11,251,255)] via-[rgb(178,40,253)] to-[rgba(237,0,217,0.93)] bg-clip-text text-transparent">
              SportsLest
            </h2>
 
@@ -47,24 +52,33 @@ const Navbar = () => {
   </div>
   <div className="navbar-end space-x-4">
   
-    <Link href={'/SignUp'} >
-            <Button className="rounded-sm bg-gradient-to-r 
-    from-[rgba(236,0,0,0.9)] to-[#5b0014]
-     text-white font-semibold border-0 hover:opacity-80 text-md tracking-wide
-     transition px-4 ">
-  Register now
-</Button>
+    
+      
+      {
+
+           user ? <>
+                       <ControlledOpenState/>
+                 </>
+
+                 : 
+
+
+                 <>
+                        <Link href={'/SignUp'} >
+             <Button className="rounded-sm bg-gradient-to-r  from-[rgba(236,0,0,0.9)] to-[#5b0014]  text-white font-semibold border-0 hover:opacity-80 text-md tracking-wide transition px-4 ">
+              Register now
+              </Button>
     </Link>
 
-  <Link href={'/Login'}>
-           <Button className="rounded-sm bg-gradient-to-r 
-    from-[#0014f5] to-[#000a7c]
-     text-white font-semibold border-0 hover:opacity-80  text-md tracking-widest
-     transition px-5">
-  Login
-</Button>
-  </Link>
-   
+            <Link href={'/Login'}>
+           <Button className="rounded-sm bg-gradient-to-r from-[#0014f5] to-[#000a7c] text-white font-semibold border-0 hover:opacity-80  text-md tracking-widest  transition px-5">
+            Login
+           </Button>
+           </Link>
+                 </>
+
+      }
+
   </div>
 </div>
     </div>
