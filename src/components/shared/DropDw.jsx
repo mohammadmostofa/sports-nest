@@ -69,21 +69,24 @@ export function ControlledOpenState() {
       bg-black/80 text-white p-2 shadow-2xl z-50"
     >
       <div className="px-3 py-2 hover:bg-white/10 rounded-lg cursor-pointer">
-         <Link href={'/Profile'}> Profile</Link>
+         <Link href={'/Profile'} className="block" > Profile</Link>
       </div>
 
       <div className="px-3 py-2 hover:bg-white/10 rounded-lg cursor-pointer">
-        <Link href={'MyBookings'} >My Booking</Link>
+        <Link href={'MyBookings'} className="block" >My Booking</Link>
       </div>
 
       <div className="px-3 py-2 hover:bg-white/10 rounded-lg cursor-pointer">
-        <Link href={"/AddFacility"}> Add Facility</Link>
+        <Link href={"/AddFacility"} className="block" > Add Facility</Link>
+      </div>
+      <div className="px-3 py-2 hover:bg-white/10 rounded-lg cursor-pointer">
+        <Link href={"/ManageMyFacilities"} className="block" > Manage My Facilities</Link>
       </div>
 
       <div className="my-1 border-t border-white/10" />
 
       <div className="px-3 py-2 hover:bg-red-500/20 text-red-400 rounded-lg cursor-pointer">
-         <button onClick={handleSignOut}>
+         <button className="block"  onClick={handleSignOut}>  
           LogOut
          </button>
       </div>

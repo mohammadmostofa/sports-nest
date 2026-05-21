@@ -2,10 +2,10 @@
 import {AlertDialog, Button} from "@heroui/react";
 import toast from "react-hot-toast";
 
-const DeletePendingData = ({booking}) => {
-  const {id,facilityName} = booking;
+const DeleteConfm = ({booked}) => {
+  const {_id,facilityName} = booked;
   const handleDelete = async () => {
-   const res = await fetch(`http://localhost:5000/booking/${id}`, {
+   const res = await fetch(`http://localhost:5000/booking/${_id}`, {
       method: "DELETE"
    });
 
@@ -26,7 +26,7 @@ const DeletePendingData = ({booking}) => {
     <div>
           <AlertDialog>
              <Button  className="px-5 py-2 rounded-xl bg-red-500/20   border border-red-500/30 text-red-300  hover:bg-red-500 hover:text-white duration-300"   >
-                Cancel
+                Delete
              </Button>
                 <AlertDialog.Backdrop>
                   <AlertDialog.Container>
@@ -38,14 +38,14 @@ const DeletePendingData = ({booking}) => {
                       </AlertDialog.Header>
                       <AlertDialog.Body>
                         <p>
-                          This will permanently cancel<strong className="text-black"> {facilityName} </strong> and all of its
+                          This will permanently Delete<strong className="text-black"> {facilityName} </strong> and all of its
                           data. This action cannot be undone.
                         </p>
                       </AlertDialog.Body>
                       <AlertDialog.Footer>
                        
                      <Button onClick={handleDelete} slot="close" variant="danger">
-                        Cancel
+                        Delete
                       </Button>
 
                       </AlertDialog.Footer>
@@ -58,4 +58,4 @@ const DeletePendingData = ({booking}) => {
   );
 };
 
-export default DeletePendingData;
+export default DeleteConfm;

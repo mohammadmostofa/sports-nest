@@ -9,8 +9,7 @@ const AllFacilitiesPage = async() => {
              
              {/* searchBar and filter */}
       <div className='flex flex-col justify-center items-center'> 
-                <h3 className='text-3xl font-bold text-center border w-[70%] 
-                mt-12 bg-gradient-to-r from-white/80 to-violet-700 capitalize tracking-wider  bg-clip-text text-transparent '>
+                <h3 className='text-3xl font-bold text-center border w-[70%]  mt-12 bg-gradient-to-r from-white/80 to-violet-700 capitalize tracking-wider  bg-clip-text text-transparent '>
                   Explore modern sports arenas, indoor courts, fitness clubs, and professional training spaces.
                 </h3>
                   

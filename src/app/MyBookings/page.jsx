@@ -2,13 +2,12 @@ import PendingCard from "@/components/shared/PendingCard";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
-const MyBookinPage = async () => {
+const MyBookingPage = async () => {
    const session = await auth.api.getSession({
          headers: await headers()
      });
 
-     const user = session?.user ;
-    
+     const user = session?.user;
 
     const res = await fetch(`http://localhost:5000/booking/${user?.id}`,{
    cache:"no-store"
@@ -29,4 +28,4 @@ const booking = await res.json();
   );
 };
 
-export default MyBookinPage;
+export default MyBookingPage;

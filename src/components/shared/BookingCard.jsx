@@ -61,8 +61,10 @@ const handleBooking = async (e) => {
     timeSlot,
     totalPrice,
     pricePerHour,
-    status: "pending",
-  };
+    status:"panding",
+
+  
+  }
 
   console.log(bookingData)
 

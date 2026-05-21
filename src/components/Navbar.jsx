@@ -7,7 +7,7 @@ import { authClient } from "@/lib/auth-client";
 import { ControlledOpenState } from "./shared/DropDw";
 
 const Navbar = () => {
-  const {data:session} = authClient.useSession() ;
+  const {data:session} = authClient.useSession();
     const user = session?.user;
 
   return (
