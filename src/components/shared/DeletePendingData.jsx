@@ -3,9 +3,9 @@ import {AlertDialog, Button} from "@heroui/react";
 import toast from "react-hot-toast";
 
 const DeletePendingData = ({booking}) => {
-  const {id,facilityName} = booking;
+  const {_id,facilityName} = booking;
   const handleDelete = async () => {
-   const res = await fetch(`http://localhost:5000/booking/${id}`, {
+   const res = await fetch(`http://localhost:5000/booking/${_id}`, {
       method: "DELETE"
    });
 

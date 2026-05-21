@@ -5,14 +5,13 @@ import { BiEdit, BiEnvelope } from 'react-icons/bi';
 import toast, { Toaster } from "react-hot-toast";
 
 const UpdateManage = ({booked}) => {
-  const { _id,facilityName,facilityType, Capacity,location,pricePerHour,email,image, description, availableTimeSlots,} = booked;    
-
+  const { id,facilityName,facilityType,email, Capacity,location,pricePerHour,image, description, availableTimeSlots,} = booked;    
 // onsubmit
 const onSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(e.currentTarget);
   const AddFacilityInfo = Object.fromEntries(formData.entries());
-  const res = await fetch(`http://localhost:5000/booking/${_id}`, {
+  const res = await fetch(`http://localhost:5000/booking/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

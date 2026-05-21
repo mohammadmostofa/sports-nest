@@ -1,14 +1,13 @@
 "use client"
-import React, { useState } from 'react';
 import Image from 'next/image';
 import DeleteConfm from './shared/DeleteConfm';
 import UpdateManage from './shared/UpdateManage';
-
 const Conformed = ({booked}) => {
+
 const {
-       _id,
+        id,
        name,
-       email,
+      email,
        image,
        facilityName,
        facilityType,
@@ -96,7 +95,7 @@ const {
 
 
                       <div>
-                             <UpdateManage booked={booked} /> 
+                             <UpdateManage  booked={booked} /> 
                       </div>
 
                 </div>

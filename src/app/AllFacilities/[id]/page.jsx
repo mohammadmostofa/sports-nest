@@ -7,9 +7,13 @@ import { CiLocationOn } from "react-icons/ci";
 
 
   const DetailsPage = async ({params}) => {
-
   const {id} = await params
-  const res = await fetch(`http://localhost:5000/facility/${id}`)
+  const res = await fetch(`http://localhost:5000/facility/${id}`,{
+    headers:{
+       authorization: "Logged In"
+    } 
+  })
+
   const DetailsFacility = await res.json() 
       const {facilityName,
              facilityType,
@@ -109,8 +113,7 @@ import { CiLocationOn } from "react-icons/ci";
           </p>
         </div>
 
-        <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-md 
-        transition-all duration-300 hover:bg-white/10 hover:border-white/20">
+        <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-md  transition-all duration-300 hover:bg-white/10 hover:border-white/20">
           <div className="flex-shrink-0 p-1.5 rounded-xl bg-blue-500/10 text-blue-400">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -121,8 +124,7 @@ import { CiLocationOn } from "react-icons/ci";
           </p>
         </div>
 
-        <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4
-         backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/20">
+        <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4  backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/20">
           <div className="flex-shrink-0 p-1.5 rounded-xl bg-red-500/10 text-red-400">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 

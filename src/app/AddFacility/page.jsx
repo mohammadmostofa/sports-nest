@@ -3,7 +3,6 @@ import toast, { Toaster } from "react-hot-toast";
 const AddFacilityPage = () => {
 const onSubmit = async (e) => {
   e.preventDefault();
-
   const formData = new FormData(e.currentTarget);
   const AddFacilityInfo = Object.fromEntries(formData.entries());
     const res = await fetch("http://localhost:5000/facility", {
