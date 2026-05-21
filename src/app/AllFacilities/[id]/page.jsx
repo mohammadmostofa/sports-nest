@@ -1,7 +1,6 @@
 import { DeleteFacilitics } from "@/components/DeleteFaclilitics";
 import EditFacilitics from "@/components/EditFacilitics";
 import BookingCard from "@/components/shared/BookingCard";
-import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
@@ -122,7 +121,6 @@ import { CiLocationOn } from "react-icons/ci";
           </p>
         </div>
 
-        {/* Tournaments */}
         <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4
          backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/20">
           <div className="flex-shrink-0 p-1.5 rounded-xl bg-red-500/10 text-red-400">
@@ -136,7 +134,6 @@ import { CiLocationOn } from "react-icons/ci";
           </p>
         </div>
 
-        {/* Flexible Schedules */}
         <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/20">
           <div className="flex-shrink-0 p-1.5 rounded-xl bg-amber-500/10 text-amber-400">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +145,6 @@ import { CiLocationOn } from "react-icons/ci";
           </p>
         </div>
 
-        {/* Full Width Dynamic Layout Grid Piece */}
         <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-md md:col-span-2 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
           <div className="flex-shrink-0 p-1.5 rounded-xl bg-purple-500/10 text-purple-400">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

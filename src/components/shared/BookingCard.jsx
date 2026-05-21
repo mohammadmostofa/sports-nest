@@ -51,16 +51,20 @@ const user = session?.user;
 const handleBooking = async (e) => {
   const bookingData = {
     facility_Id: _id,
-    username: user?.name,
-    email: user?.email,
+    username:user?.name,
+    user_id :user.id,
+    email:user?.email,
     image,
     facilityName,
     facilityType,
     BookingDate,
     timeSlot,
     totalPrice,
+    pricePerHour,
     status: "pending",
   };
+
+  console.log(bookingData)
 
   const res = await fetch("http://localhost:5000/booking", {
     method: "POST",

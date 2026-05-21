@@ -21,7 +21,7 @@ const FeaturesPage =async () => {
         {/* Stats */}
             
             <div className='flex flex-col justify-center items-center' >
-               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center my-7">                         
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-x-hidden gap-6 justify-items-center my-7">                         
                            {
                               facilities.map(facilities => 
                               <FaciliticsCard key={facilities._id} facilities={facilities} >                               
