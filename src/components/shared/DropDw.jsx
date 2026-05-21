@@ -21,7 +21,7 @@ export function ControlledOpenState() {
 
     toast.success("Logged out successfully");
 
-     router.push("/login");
+     router.push("/Login");
   } catch (error) {
     toast.error(error?.message || "Try Again");
   }

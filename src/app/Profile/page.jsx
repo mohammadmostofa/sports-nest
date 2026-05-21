@@ -1,11 +1,12 @@
 "use client"
+import { UpdateUserModal } from '@/components/shared/UpdateUser';
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import React from 'react';
 
 const ProfilePage = () => {
     const { data:session , error } = authClient.useSession();
-    const user = session?.user
+    const user = session?.user ;
   
   return (
 
@@ -35,11 +36,9 @@ const ProfilePage = () => {
     </div>
 
     <div className="mt-6">
-      <button className="px-5 py-2 rounded-xl bg-violet-600 hover:bg-violet-700 transition duration-300 font-medium">
-        Edit Prifile
-      </button>
+        <UpdateUserModal   />
     </div>
-
+   
   </div>
 
 </div>

@@ -31,7 +31,7 @@ const SignUpPage = () => {
       toast.error(error.message || "Try Again");
    } else{
      toast.success("Signed up successfully");
-     redirect("/");
+     redirect("/Login");
   }
 
 
@@ -117,28 +117,16 @@ const handleGoogleSignIn = async () => {
       </TextField>
 
       {/* PASSWORD */}
-      <TextField name="password" isRequired>
-        <Label className="text-sm text-white">Password</Label>
-
-        <div className="relative">
-          <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-
-          <Input
-            type={showPass ? "text" : "password"}
-            placeholder="Password"
-            className="w-full pl-10 px-10 py-2 
-            border border-white/20 bg-white/10 text-white placeholder-gray-300 rounded-lg"
-          />
-
-          <button
-            type="button"
-            onClick={() => setShowPass(!showPass)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300"
-          >
-            {showPass ? <FiEyeOff /> : <FiEye />}
-          </button>
-        </div>
-      </TextField>
+     <Input
+  type={showPass ? "text" : "password"}
+  placeholder="Password"
+  minLength={6}
+  pattern="^(?=.*[a-z])(?=.*[A-Z]).{6,}$"
+  title="At least 6 characters, one uppercase letter, and one lowercase letter"
+  className="w-full pl-10 px-10 py-2 
+  border border-white/20 bg-white/10 text-white 
+  placeholder-gray-300 rounded-lg"
+/>
 
       {/* submit btn*/}
       <Button 

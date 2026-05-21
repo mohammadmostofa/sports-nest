@@ -1,5 +1,6 @@
 import { DeleteFacilitics } from "@/components/DeleteFaclilitics";
 import EditFacilitics from "@/components/EditFacilitics";
+import BookingCard from "@/components/shared/BookingCard";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 
   const DetailsPage = async ({params}) => {
+
   const {id} = await params
   const res = await fetch(`http://localhost:5000/facility/${id}`)
   const DetailsFacility = await res.json() 
@@ -162,65 +164,8 @@ import { CiLocationOn } from "react-icons/ci";
     </div>
 
     {/* Right */}
-    <div className="w-full max-w-md mx-auto lg:w-full bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-xl space-y-5 lg:sticky lg:top-6 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10">
-      
-      <div className="text-center pb-2 border-b border-white/5">
-        <h2 className="text-3xl font-extrabold text-white tracking-tight">
-          ${pricePerHour}
-          <span className="text-sm text-gray-400 font-normal"> /hour</span>
-        </h2>
-      </div>
-
-      <div className="flex flex-col bg-black/20 rounded-2xl p-4 space-y-2 border border-white/5">
-        <label htmlFor="date" className="text-gray-400 text-xs uppercase tracking-wider font-semibold">Booking Date & Time</label>
-        <input 
-          type="datetime-local" 
-          id="date"
-          name="date" 
-          className="w-full bg-transparent text-white border border-white/20 rounded-xl p-2.5 outline-none
-           focus:border-blue-500 text-sm transition-colors cursor-pointer" 
-        />
-      </div>
-
-      {/* right highlighit  */}
-      <div className="bg-black/20 rounded-2xl p-4 border border-white/5">
-        <h3 className="text-gray-400 font-bold mb-3 text-xs tracking-wider uppercase">
-          Included Highlights
-        </h3>
-        <ul className="space-y-3 text-xs md:text-sm text-gray-300">
-          <li className="flex items-center gap-2.5">
-            <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="font-medium">Professional Training Area</span>
-          </li>
-          <li className="flex items-center gap-2.5">
-            <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="font-medium">Modern Sports Equipment</span>
-          </li>
-          <li className="flex items-center gap-2.5">
-            <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="font-medium">Secure & Friendly Environment</span>
-          </li>
-          <li className="flex items-center gap-2.5">
-            <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="font-medium">Flexible Booking Schedule</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* Primary Conversion Call To Action Button */}
-      <Button className="w-full py-4 rounded-2xl text-white font-bold bg-blue-600 hover:bg-blue-500
-       active:bg-blue-700 shadow-lg shadow-blue-600/20 tracking-wide uppercase text-xs transition-all duration-200">
-        Book Now
-      </Button>
-
+    <div>
+       <BookingCard DetailsFacility={DetailsFacility} />
     </div>
 
   </div>
