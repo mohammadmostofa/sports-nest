@@ -65,12 +65,10 @@ const handleBooking = async (e) => {
         
      
     //  token
-    const {data:tokenData} =  await authClient.token();
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      "Authorization": `Bearer ${tokenData?.token}`
     },
     body: JSON.stringify(bookingData),
   });

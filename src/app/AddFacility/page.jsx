@@ -1,5 +1,4 @@
 "use client"
-import { authClient } from "@/lib/auth-client";
 import toast, { Toaster } from "react-hot-toast";
 const AddFacilityPage = () => {
 const onSubmit = async (e) => {
@@ -7,13 +6,11 @@ const onSubmit = async (e) => {
   const formData = new FormData(e.currentTarget);
   const AddFacilityInfo = Object.fromEntries(formData.entries());
   // token
-      const {data:tokenData} =  await authClient.token();
   
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facility`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "Authorization": `Bearer ${tokenData?.token}`
 
       },
       body: JSON.stringify(AddFacilityInfo),
