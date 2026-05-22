@@ -9,7 +9,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { GrGoogle } from "react-icons/gr";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { redirect} from "next/navigation";
 
 const SignUpPage = () => {
   const [showPass, setShowPass] = useState(false);
@@ -45,7 +45,7 @@ const SignUpPage = () => {
       toast.error(error.message || "Try Again");
     } else {
       toast.success("Signed up with Google successfully");
-      router.push("/Login");
+      redirect("/");
     }
   };
 

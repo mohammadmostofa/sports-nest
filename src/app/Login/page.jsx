@@ -21,6 +21,7 @@ const LoginPage = () => {
     const { data, error } = await authClient.signIn.email({
             email:user.email,
             password:user.password,
+            callbackURL : '/'
 });
     
 console.log(data,'data')
@@ -45,9 +46,9 @@ console.log(data,'data')
       toast.error(error.message || "Try Again");
    } else{
     toast.success("Logged in with Google successfully");
-     redirect("/");
+    
   }
-
+     
 
 }
 
