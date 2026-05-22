@@ -8,15 +8,15 @@ export async function proxy(request) {
          headers: await headers()
      });
 
-     if(!session){
-       return NextResponse.redirect(new URL('/Login', request.url))
-
-     }
-
+     if(session){
+       return NextResponse.next()
+    }
+    
+    return NextResponse.redirect(new URL('/Login', request.url))
 }
  
 export const config = {
-  matcher:[ "/AllFacilities", 
+  matcher:["/AllFacilities", 
     "/AllFacilities/:path*" ,
      "/MyBookings",
      "/AddFacility",
