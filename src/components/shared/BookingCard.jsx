@@ -4,9 +4,8 @@ import { Button } from '@heroui/react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 const BookingCard = ({DetailsFacility}) => {
-const { data:session } = authClient.useSession();
-const user = session?.user;
-  
+  const { data:session } = authClient.useSession();
+  const user = session?.user;
   const {facilityName, _id, facilityType, pricePerHour,image} = DetailsFacility; 
   const HourPrice =  Number(pricePerHour)
   const [dates, setDates] = useState("");
@@ -62,16 +61,16 @@ const handleBooking = async (e) => {
     totalPrice,
     pricePerHour,
     status:"panding",
-
-  
-  }
-
-  console.log(bookingData)
-
-  const res = await fetch("http://localhost:5000/booking", {
+  };
+        
+     
+    //  token
+    const {data:tokenData} =  await authClient.token();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
+      "Authorization": `Bearer ${tokenData?.token}`
     },
     body: JSON.stringify(bookingData),
   });
@@ -85,8 +84,7 @@ const handleBooking = async (e) => {
 
   toast.success("Booking Created Successfully");
 };
-  
-
+    
 
   return (
 <div className="w-full max-w-sm mx-auto lg:sticky lg:top-10">

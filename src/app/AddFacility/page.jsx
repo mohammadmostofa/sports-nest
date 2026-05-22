@@ -1,14 +1,20 @@
 "use client"
+import { authClient } from "@/lib/auth-client";
 import toast, { Toaster } from "react-hot-toast";
 const AddFacilityPage = () => {
 const onSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(e.currentTarget);
   const AddFacilityInfo = Object.fromEntries(formData.entries());
-    const res = await fetch("http://localhost:5000/facility", {
+  // token
+      const {data:tokenData} =  await authClient.token();
+  
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facility`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        "Authorization": `Bearer ${tokenData?.token}`
+
       },
       body: JSON.stringify(AddFacilityInfo),
     });
@@ -19,7 +25,7 @@ const onSubmit = async (e) => {
           toast.error("Try Again!");
     } else {
           toast.success("Facility Added  Successfully");
-    }
+    }  
   
 };
 
@@ -157,23 +163,6 @@ const onSubmit = async (e) => {
               </fieldset> 
                 
               {/* Email (Auto Input) */}
-              <fieldset className="fieldset col-span-1">
-              <label className="label">
-                <span className="label-text font-semibold text-gray-300">Owner Email</span>
-              </label>
-            
-              <input
-                type="email"
-                name="email"
-                className="input input-bordered w-full text-white focus:input-primary transition-all duration-200"
-                placeholder="user@example.com"
-                required
-                minLength={6}
-                pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                title="At least 6 characters, one uppercase letter, one lowercase letter"
-              />
-            </fieldset>
-
            <fieldset className="fieldset col-span-1 md:col-span-2 w-full">
            <label className="label">
              <span className="label-text font-semibold text-gray-300">Describe your new Facility</span>

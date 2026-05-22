@@ -9,7 +9,7 @@ export function DeleteFacilitics({DetailsFacility}) {
   const {_id,facilityName} = DetailsFacility;
  const handleDeleteBtn = async (e) => {
         e.preventDefault();
-        const res = await fetch(`http://localhost:5000/facility/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facility/${_id}`, {
       method: "DELETE",
     });
 

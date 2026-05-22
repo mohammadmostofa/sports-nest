@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const DeletePendingData = ({booking}) => {
   const {_id,facilityName} = booking;
   const handleDelete = async () => {
-   const res = await fetch(`http://localhost:5000/booking/${_id}`, {
+   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${_id}`, {
       method: "DELETE"
    });
 

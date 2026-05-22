@@ -11,7 +11,7 @@ const onSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(e.currentTarget);
   const AddFacilityInfo = Object.fromEntries(formData.entries());
-  const res = await fetch(`http://localhost:5000/booking/${_id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -93,11 +93,11 @@ const onSubmit = async (e) => {
                   name="status"
                   className="select text-white w-full text-center pt-2 focus:select-primary transition-all duration-200"
                 >
-                  <option value="pending" className="text-center text-black">
+                  <option value="pending" className="text-center text-white">
                     pending
                   </option>
 
-                  <option value="confirmed" className="text-center text-black">
+                  <option value="confirmed" className="text-center text-white">
                     confirmed
                   </option>
                 </select>
