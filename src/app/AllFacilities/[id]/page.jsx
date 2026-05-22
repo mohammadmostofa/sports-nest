@@ -14,12 +14,7 @@ import { CiLocationOn } from "react-icons/ci";
   // })  
 
   const {id} = await params
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facility/${id}`,{
-  //     headers: {
-  //   "Authorization": `Bearer ${token}`
-  // },
-
-  })
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facility/${id}`)
   const DetailsFacility = await res.json() 
       const {facilityName,
              facilityType,
