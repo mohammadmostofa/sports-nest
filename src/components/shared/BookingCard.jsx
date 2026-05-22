@@ -50,9 +50,9 @@ const user = session?.user;
   // booking
 const handleBooking = async (e) => {
   const bookingData = {
-    facility_Id: _id,
+    facility_Id:_id,
     username:user?.name,
-    user_id :user.id,
+    user_id:user?.id,
     email:user?.email,
     image,
     facilityName,

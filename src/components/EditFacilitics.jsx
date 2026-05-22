@@ -5,8 +5,7 @@ import { BiEdit, BiEnvelope } from 'react-icons/bi';
 import toast, { Toaster } from "react-hot-toast";
 
 const EditFacilitics = ({DetailsFacility}) => {
-  const { _id,facilityName,facilityType, Capacity,location,pricePerHour,email,image, description, availableTimeSlots,} = DetailsFacility;    
-
+  const { _id,facilityName,facilityType, Capacity,location,pricePerHour,image, description, availableTimeSlots,} = DetailsFacility;    
 // onsubmit
 const onSubmit = async (e) => {
   e.preventDefault();
@@ -180,25 +179,7 @@ const onSubmit = async (e) => {
                   
                   />
                 </fieldset>
-
-                {/* Email */}
-                <fieldset className="fieldset col-span-1">
-                <label className="label">
-                  <span className="label-text font-semibold text-gray-300">Owner Email</span>
-                </label>
-              
-                <input
-                  type="email"
-                  name="email"
-                  defaultValue={email}
-                  className="input input-bordered w-full text-white focus:input-primary
-                   transition-all duration-200"
-                  placeholder="user@example.com"
-                  title="At least 6 characters, one uppercase letter, one lowercase letter"
-                />
-              </fieldset>
-               
-
+          
                 {/* Description */}
                 <fieldset className="fieldset col-span-1 md:col-span-2 w-full">
                   <label className="label">

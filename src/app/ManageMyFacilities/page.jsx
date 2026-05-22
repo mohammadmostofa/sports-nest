@@ -8,7 +8,6 @@ const ManageMyFaclilitiesPage = async () => {
   });
 
   const user = session?.user;
-console.log(user,'kkkkk')
   const res = await fetch(`http://localhost:5000/booking/${user?.id}`,{
    cache:"no-store"
 });
