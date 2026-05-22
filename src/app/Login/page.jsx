@@ -53,7 +53,7 @@ console.log(data,'data')
 
 
   return (
-   <div className="min-h-screen flex items-center justify-center bg-gray-100/5 px-4 py-2">
+   <div className=" py-10 flex items-center justify-center bg-gray-100/5 px-4">
    {/*card  */}
   <Card className="w-full max-w-sm px-10 py-10 bg-violet-800/10 rounded-2xl shadow-xl
    border border-violet-900/40  ">
@@ -131,7 +131,8 @@ console.log(data,'data')
     {/* GOOGLE BUTTON */}
     <Button onClick={handleGoogleSignIn}
       type="button"
-      className="w-full rounded-lg bg-white hover:bg-white/80 text-black flex items-center justify-center gap-2"
+      className="w-full rounded-lg bg-white hover:bg-white/80 text-black
+       flex items-center justify-center gap-2"
     >
       <GrGoogle className="text-lg" />
       Sign in with Google

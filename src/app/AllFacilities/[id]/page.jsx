@@ -1,15 +1,25 @@
 import { DeleteFacilitics } from "@/components/DeleteFaclilitics";
 import EditFacilitics from "@/components/EditFacilitics";
 import BookingCard from "@/components/shared/BookingCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
 
 
   const DetailsPage = async ({params}) => {
+  const {token} = await auth.api.getToken({
+      headers: await headers(),
+  })  
 
   const {id} = await params
-  const res = await fetch(`http://localhost:5000/facility/${id}`)
+  const res = await fetch(`http://localhost:5000/facility/${id}`,{
+      headers: {
+    "Authorization": `Bearer ${token}`
+  },
+
+  })
   const DetailsFacility = await res.json() 
       const {facilityName,
              facilityType,

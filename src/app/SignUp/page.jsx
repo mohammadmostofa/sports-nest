@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Button, Card, Input, Separator } from "@heroui/react";
 import { Form, TextField, Label } from "react-aria-components";
@@ -51,7 +50,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100/5 px-4 py-2">
+    <div className=" min-h-3xl flex items-center justify-center bg-gray-100/5 px-4 py-10">
       <Card className="w-full max-w-sm px-10 py-5 bg-violet-800/10 rounded-2xl shadow-xl border border-violet-900/40">
 
         <div className="text-center mb-3">
