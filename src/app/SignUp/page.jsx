@@ -9,11 +9,11 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { GrGoogle } from "react-icons/gr";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
-import { redirect} from "next/navigation";
+import { useRouter } from "next/navigation"; // 
 
 const SignUpPage = () => {
   const [showPass, setShowPass] = useState(false);
-  const router = useRouter();
+  const router = useRouter(); 
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -32,25 +32,20 @@ const SignUpPage = () => {
       toast.error(error.message || "Try Again");
     } else {
       toast.success("Signed up successfully");
-      router.push("/Login");
+      router.push("/Login"); // 
     }
   };
 
   const handleGoogleSignIn = async () => {
-    const { error } = await authClient.signIn.social({
-      provider: "google",
-    });
 
-    if (error) {
-      toast.error(error.message || "Try Again");
-    } else {
-      toast.success("Signed up with Google successfully");
-      redirect("/");
-    }
+    authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/", // 
+    });
   };
 
   return (
-    <div className=" min-h-3xl flex items-center justify-center bg-gray-100/5 px-4 py-10">
+    <div className="min-h-3xl flex items-center justify-center bg-gray-100/5 px-4 py-10">
       <Card className="w-full max-w-sm px-10 py-5 bg-violet-800/10 rounded-2xl shadow-xl border border-violet-900/40">
 
         <div className="text-center mb-3">
@@ -66,7 +61,9 @@ const SignUpPage = () => {
             <Label className="text-sm text-white">Full Name</Label>
             <div className="relative">
               <FaRegUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <Input name="name" placeholder="Enter name"
+              <Input
+                name="name"
+                placeholder="Enter name"
                 className="w-full pl-10 py-2 border border-white/20 bg-white/10 text-white placeholder-gray-300 rounded-lg"
               />
             </div>
@@ -76,7 +73,9 @@ const SignUpPage = () => {
             <Label className="text-sm text-white">Image URL</Label>
             <div className="relative">
               <AiOutlinePicture className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <Input name="image" placeholder="Image link"
+              <Input
+                name="image"
+                placeholder="Image link"
                 className="w-full pl-10 py-2 border border-white/20 bg-white/10 text-white placeholder-gray-300 rounded-lg"
               />
             </div>
@@ -86,7 +85,9 @@ const SignUpPage = () => {
             <Label className="text-sm text-white">Email</Label>
             <div className="relative">
               <MdEmail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <Input name="email" placeholder="example@mail.com"
+              <Input
+                name="email"
+                placeholder="example@mail.com"
                 className="w-full pl-10 py-2 border border-white/20 bg-white/10 text-white placeholder-gray-300 rounded-lg"
               />
             </div>
@@ -115,7 +116,10 @@ const SignUpPage = () => {
             </div>
           </TextField>
 
-          <Button type="submit" className="w-full py-2 mt-2 rounded-lg bg-blue-700 text-white font-medium">
+          <Button
+            type="submit"
+            className="w-full py-2 mt-2 rounded-lg bg-blue-700 text-white font-medium"
+          >
             Sign up →
           </Button>
         </Form>
@@ -128,7 +132,8 @@ const SignUpPage = () => {
           <Separator className="flex-1 bg-white/30" />
         </div>
 
-        <Button onClick={handleGoogleSignIn}
+        <Button
+          onClick={handleGoogleSignIn}
           type="button"
           className="w-full mt-3 rounded-lg bg-white text-black flex items-center justify-center gap-2"
         >
