@@ -1,4 +1,3 @@
-// app/facilities/loading.jsx
 
 export default function Loading() {
   return (
